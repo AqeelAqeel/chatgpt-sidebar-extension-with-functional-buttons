@@ -43,4 +43,15 @@ body {
   }
 }
 
-
+// Button style
+.my-button {
+  color: white;
+  background-color: blue;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  &:hover {
+    background-color: darkblue;
+  }
+}

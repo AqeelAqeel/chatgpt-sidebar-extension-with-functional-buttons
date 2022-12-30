@@ -9,4 +9,11 @@ setTimeout(() => {
 
   document.documentElement.appendChild(div$);
   new Box({target: div$});
+
+  // Add button behavior
+  const button = document.getElementById("my-button");
+  button.addEventListener("click", function() {
+    const bodyText = document.body.textContent;
+    const summary = `please summarize this\n${bodyText}`;
+  });
 }, 10);
