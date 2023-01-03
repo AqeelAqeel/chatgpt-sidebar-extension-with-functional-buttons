@@ -25,8 +25,9 @@
             <div class="boxgpt-message-text">Hello! Ask me anything.</div>
           </div>
         {/each}
-      </div>
+      </div>  
     </div>
+    <button on:click={summarizePage}>Summarize this page</button>
     <div class="boxgpt-prompt">
       <div class="boxgpt-message-indicator">▶</div>
       <textarea disabled={$authorized !== 'authorized'} bind:value={prompt} on:keypress={handleTextInput}></textarea>
@@ -163,6 +164,7 @@
 
   function handleTextInput(event) {
     if (event.key === 'Enter' && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
+
       event.preventDefault();
 
       postQuestion({question: prompt});
@@ -170,6 +172,12 @@
 
       setTimeout(() => scrollToBottom(), 4);
     }
+  }
+
+  function summarizePage() {
+    const bodyHTML = document.querySelector('body').innerHTML;
+    tryPostMessage({type: 'summarize', bodyHTML});
+    prompt = 'summarize this text for me\n' + bodyHTML;
   }
 
   function postQuestion(data) {
