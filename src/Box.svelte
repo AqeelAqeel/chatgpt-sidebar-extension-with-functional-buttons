@@ -175,9 +175,9 @@
   }
 
   function summarizePage() {
-    const bodyHTML = document.querySelector('body').innerHTML;
-    tryPostMessage({type: 'summarize', bodyHTML});
-    prompt = 'summarize this text for me\n' + bodyHTML;
+    const bodyText = document.body.textContent;
+    tryPostMessage({type: 'summarize', bodyText});
+    prompt = 'summarize this text for me\n' + bodyText;
   }
 
   function postQuestion(data) {
