@@ -236,6 +236,17 @@
     z-index: 1000000000;
   }
 
+  .summarizePage{
+    background: linear-gradient(45deg, #ccc, #fff);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
   .boxgpt-header {
     height: 30px;
     background: #2b2b36;
